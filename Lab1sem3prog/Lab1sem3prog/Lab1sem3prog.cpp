@@ -6,8 +6,12 @@
 int main()
 {
 	ListNode a;
-	a.create(12);
+	a.create(5);
+	a.add(1, 1);
+	a.add(2, 2);
+	a.add(4, 3);
+	a.add(3, 3);
 	a.print();
-	a.add(123, 1);
-	a.add(123, 1);
+
+	std::cout <<"Lenth: " << a.lenth() << std::endl;
 }
