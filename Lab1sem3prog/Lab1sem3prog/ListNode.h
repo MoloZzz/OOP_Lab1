@@ -2,6 +2,55 @@
 
 #include<iostream>
 #include"Windows.h"
+#include<vector>
+
+class ListMassive {
+private:
+
+	std::vector<int> array = {};
+
+
+	int Partition(std::vector<int>& v, int start, int end) {
+
+		int pivot = end;
+		int j = start;
+		for (int i = start; i < end; ++i) {
+			if (v[i] < v[pivot]) {
+				std::swap(v[i], v[j]);
+				++j;
+			}
+		}
+		std::swap(v[j], v[pivot]);
+		return j;
+
+	}
+public:
+
+	void add(int data) {
+		array[array.size()] = data;
+	}
+	void print() {
+		for (auto const& element : array)
+			std::cout << element << ' ';
+	}
+	void dell(int index) {
+		array[index] = NULL;
+	}
+	void add(int data, int index) {
+		array[index] = data;
+
+	}
+	void Quicksort(std::vector<int>& v, int start, int end) {
+
+		if (start < end) {
+			int p = Partition(v, start, end);
+			Quicksort(v, start, p - 1);
+			Quicksort(v, p + 1, end);
+		}
+
+	}
+};
+
 class ListNode
 {
 public:
