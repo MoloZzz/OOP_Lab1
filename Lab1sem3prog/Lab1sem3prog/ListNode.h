@@ -7,7 +7,7 @@
 class ListMassive {
 private:
 
-	std::vector<int> array1 = {};
+	std::vector<int> array = {};
 
 
 	int Partition(std::vector<int>& v, int start, int end) {
@@ -27,17 +27,17 @@ private:
 public:
 
 	void add(int data) {
-		array1[array1.size()] = data;
+		array[array.size()] = data;
 	}
 	void print() {
-		for (auto const& element : array1)
+		for (auto const& element : array)
 			std::cout << element << ' ';
 	}
 	void dell(int index) {
-		array1[index] = NULL;
+		array[index] = NULL;
 	}
 	void add(int data, int index) {
-		array1[index] = data;
+		array[index] = data;
 
 	}
 	void Quicksort(std::vector<int>& v, int start, int end) {
@@ -49,8 +49,6 @@ public:
 		}
 
 	}
-
-
 };
 
 class ListNode
